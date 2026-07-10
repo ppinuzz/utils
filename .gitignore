@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------
+#                                 PYTHON
+# ---------------------------------------------------------------------
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+
+# ---------------------------------------------------------------------
+#                                 OTHER FILES
+# ---------------------------------------------------------------------
+
+# folder of project-specific settings created by VSCode
+# (do not push it unless it's vital for all the contributors to have the same settings)
+# (the '**' means "in any directory or subdirectory")
+**/.vscode
+
+# compiled libraries on Windows and on Linux/Mac OS
+*.dll
+*.so
+
+# log files (usually created by me)
+*.log
