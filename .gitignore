@@ -17,3 +17,5 @@ __pycache__/
 
 # log files
 *.log
+
+_NOT_COMMIT/
