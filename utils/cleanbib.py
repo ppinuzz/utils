@@ -35,8 +35,8 @@ def clean_bibfile(bib_file: Path | str, clean_bib_file: Path | str, verbose: boo
     if not bib_file.exists():
         raise FileNotFoundError(f'{bib_file.resolve()} does not exist')
     
-    if verbose:
-        print("Removing double braces {{ }} from 'title' field in " + f'{bib_file.resolve()}')
+    _print_msg("Removing double braces {{ }} from 'title' field in " + f'{bib_file.resolve()}',
+               verbose)
     clean_bib = []
     with open(bib_file, 'r') as file:
         for line in file:
@@ -49,8 +49,7 @@ def clean_bibfile(bib_file: Path | str, clean_bib_file: Path | str, verbose: boo
             clean_bib.append(line)
     
     clean_bib_file = Path(clean_bib_file)
-    if verbose:
-        print(f'Writing clean bibliography file to {clean_bib_file.resolve()}')
+    _print_msg(f'Writing clean bibliography file to {clean_bib_file.resolve()}', verbose)
     with open(clean_bib_file, 'w') as file:
         file.writelines(clean_bib)
 
@@ -112,6 +111,12 @@ def read_cli_args(argv: list[str] | None = None) -> argparse.Namespace:
 
     return args
 
+
+#%% PRIVATE FUNCTIONS
+
+def _print_msg(text: str, verbose: bool) -> None:
+    if verbose:
+        print(text)
 
 
 #%% APPLICATION ENTRY POINT
